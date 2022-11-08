@@ -9,25 +9,25 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.springbootredis.model.Employee;
-import com.example.springbootredis.service.EmployeeService;
+import com.example.springbootredis.model.Chaine;
+import com.example.springbootredis.service.ChaineService;
 
 @RestController
-@RequestMapping("/api/employee")
-public class EmployeeResource {
+@RequestMapping("/api/chaine")
+public class ChaineResource {
 
 	@Autowired
-	EmployeeService employeeService;
+	ChaineService chaineService;
 
 	@GetMapping(path = "{id}")
-	@Cacheable(value = "Employee", key = "#id")
-	public Employee getEmployee(@PathVariable("id") final Long id) {
-		return employeeService.findById(id);
+	@Cacheable(value = "Chaine", key = "#id")
+	public Chaine getChaine(@PathVariable("id") final Long id) {
+		return chaineService.findById(id);
 	}
 
 	@PostMapping
-	public Employee saveEmployee(@RequestBody Employee emp) {
-		return employeeService.save(emp);
+	public Chaine saveChaine(@RequestBody Chaine chaine) {
+		return chaineService.save(chaine);
 	}
 
 }

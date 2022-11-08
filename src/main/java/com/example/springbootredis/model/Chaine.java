@@ -11,14 +11,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Employee implements Serializable{
+public class Chaine implements Serializable{
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	private Long id;
-	private String firstName;
-	private String lastName;
+	private String initiale;
+	private String signee;
 
 }

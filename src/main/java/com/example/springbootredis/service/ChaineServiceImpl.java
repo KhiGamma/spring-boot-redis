@@ -7,19 +7,19 @@ import org.springframework.data.redis.core.HashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
-import com.example.springbootredis.model.Employee;
+import com.example.springbootredis.model.Chaine;
 
 @Service
-public class EmployeeServiceImpl implements EmployeeService {
+public class ChaineServiceImpl implements ChaineService {
 
-	private static final String EMPLOYEE = "Employee";
+	private static final String CHAINE = "Chaine";
 
 	private RedisTemplate<String, Object> redisTemplate;
 
-	private HashOperations<String, Long, Employee> hashOperations;
+	private HashOperations<String, Long, Chaine> hashOperations;
 
 	@Autowired
-	public EmployeeServiceImpl(RedisTemplate<String, Object> redisTemplate) {
+	public ChaineServiceImpl(RedisTemplate<String, Object> redisTemplate) {
 		this.redisTemplate = redisTemplate;
 	}
 	
@@ -29,14 +29,15 @@ public class EmployeeServiceImpl implements EmployeeService {
 	}
 
 	@Override
-	public Employee save(Employee emp) {
-		hashOperations.put(EMPLOYEE, emp.getId(), emp);
-		return emp;
+	public Chaine save(Chaine chaine) {
+		chaine.setSignee(chaine.getInitiale() + " mais signée");
+		hashOperations.put(CHAINE, chaine.getId(), chaine);
+		return chaine;
 	}
 
 	@Override
-	public Employee findById(Long id) {
-		return (Employee) hashOperations.get(EMPLOYEE, id);
+	public Chaine findById(Long id) {
+		return (Chaine) hashOperations.get(CHAINE, id);
 	}
 
 }
