@@ -1,4 +1,5 @@
-version: '3'
+version: '3.7'
+
 services:
   app:
     build: .
@@ -8,5 +9,12 @@ services:
       - redis
   redis:
     image: redis
+    command: redis-server --save 60 1
+    volumes:
+      - data:/data
     ports:
      - "6379:6379"
+    restart: always
+
+volumes:
+  data:

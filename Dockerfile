@@ -1,4 +1,5 @@
-FROM openjdk:8
-ADD target/spring-boot-redis.jar spring-boot-redis.jar
+FROM maven
+COPY . .
+RUN mvn package
 EXPOSE 8085
-ENTRYPOINT ["java", "-jar", "spring-boot-redis.jar"]
+ENTRYPOINT ["java", "-jar", "target/spring-boot-redis.jar"]
