@@ -1,5 +1,6 @@
 package com.example.springbootredis.resource;
 
+import com.example.springbootredis.model.ChaineRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +27,7 @@ public class ChaineResource {
 	}
 
 	@PostMapping
-	public Chaine saveChaine(@RequestBody Chaine chaine) {
+	public Chaine saveChaine(@RequestBody ChaineRequest chaine) {
 		return chaineService.save(chaine);
 	}
 

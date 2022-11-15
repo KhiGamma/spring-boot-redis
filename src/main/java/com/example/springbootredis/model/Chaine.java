@@ -21,4 +21,12 @@ public class Chaine implements Serializable{
 	private String initiale;
 	private String signee;
 
+
+	public Chaine (ChaineRequest chaineRequest) {
+
+		this.id = chaineRequest.getId();
+		this.initiale = chaineRequest.getInitiale();
+	}
 }
+
+
