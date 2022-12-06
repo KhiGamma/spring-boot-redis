@@ -8,9 +8,9 @@
 
 ### Le projet
 
-Ce projet à pour but de stocker des chaines de caractères ainsi que la même chaine signée via l'algorithme **Sha256**.
+Ce projet a pour but de stocker des chaines de caractères ainsi que la même chaine signée via l'algorithme **Sha256**.
 
-Pour ce faire, nous avons développé une **API RESTful** avec le framework **SpringBoot** connecté à une base de donnée **Redis**.
+Pour ce faire, nous avons développé une **API RESTful** avec le framework **SpringBoot** connecté à une base de données **Redis**.
 L'application devait cependant pourvoir tourner uniquement via un contenaire **Docker** avec un stockage persistent entre ces derniers.
 
 ---
@@ -25,7 +25,7 @@ Suite à cela vous aurez accès à l'API via le port 8085.
 
 #### Swagger
 
-Un swagger est mis à disposition pour avoir une documentation en ligne. Pour y acceder lancer le contenaire puis aller à l'adresse http://localhost:8085/swagger-ui.html.
+Un swagger est mis à disposition pour avoir une documentation en ligne. Pour y accéder, lancer le contenaire puis aller à l'adresse http://localhost:8085/swagger-ui.html.
 
 Vous aurez la possibilité de tester les requêtes en cliquant sur une des sections puis sur **Try it out** en haut à droite.
 
