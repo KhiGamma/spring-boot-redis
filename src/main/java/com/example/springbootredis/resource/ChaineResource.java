@@ -19,7 +19,7 @@ public class ChaineResource {
 
 	@Autowired
 	ChaineService chaineService;
-
+    // It would have been nice to have a call to list all strings
 	@GetMapping(path = "{id}")
 	@Cacheable(value = "Chaine", key = "#id")
 	public Chaine getChaine(@PathVariable("id") final Long id) {
